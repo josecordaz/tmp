@@ -6,6 +6,10 @@ node {
     stage('Cloning') { // <2>
         sh 'pwd' // <3>
     }
+ 
+    stage('deleting'){
+        sh 'rm -rf node_modules'
+    }
     
     stage('Downloading dependencies') { // <2>
         sh 'ls' // <3>
