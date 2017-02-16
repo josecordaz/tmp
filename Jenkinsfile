@@ -11,10 +11,14 @@ node {
         sh 'rm -rf node_modules'
     }
     
-    stage('Downloading dependencies') { // <2>
+    stage('ls') { // <2>
         sh 'ls' // <3>
     }
-    
+
+    stage('Downloading dependencies'){
+        sh 'npm install'
+    }
+
     stage('Checkout Master') { // <2>
         sh 'git checkout main' // <3>
     }
