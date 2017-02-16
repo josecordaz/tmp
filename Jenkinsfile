@@ -1,7 +1,7 @@
 node {
     /*stage('Clean') { // <2>
         sh 'rm -rf tmp' // <3>
-    }*/
+    }
       
     stage('Cloning') { // <2>
         sh 'pwd' // <3>
@@ -9,10 +9,10 @@ node {
  
     stage('deleting'){
         sh 'rm -rf node_modules'
-    }
+    }*/
     
-    stage('ls') { // <2>
-        sh 'ls' // <3>
+    stage('Cloning') { // <2>
+        sh 'git clone git@github.com:josecordaz/tmp.git' // <3>
     }
 
     stage('Downloading dependencies'){
