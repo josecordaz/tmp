@@ -4,10 +4,10 @@ node {
     }
       
     stage('Cloning') { // <2>
-        sh 'git clone git@github.com:josecordaz/tmp.git' // <3>
+        sh 'pwd' // <3>
     }
     
-    stage('Downloading dependencies') { // <2>
+    /*stage('Downloading dependencies') { // <2>
         sh 'cd tmp && npm install' // <3>
     }
     
@@ -39,7 +39,7 @@ node {
     
     stage('Publish') {
         sh 'cd tmp && ng github-pages:deploy'
-    }
+    }*/
 }
 
 /*node {
