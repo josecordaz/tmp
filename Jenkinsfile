@@ -1,11 +1,11 @@
 node {
     /*stage('Clean') { // <2>
         sh 'rm -rf tmp' // <3>
-    }
+    }*/
       
     stage('Cloning') { // <2>
         sh 'pwd' // <3>
-    }*/
+    }
     
     stage('Downloading dependencies') { // <2>
         sh 'ls' // <3>
