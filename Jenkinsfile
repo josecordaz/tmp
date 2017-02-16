@@ -8,7 +8,7 @@ node {
     }*/
     
     stage('Downloading dependencies') { // <2>
-        sh 'npm install' // <3>
+        sh 'ls' // <3>
     }
     
     stage('Checkout Master') { // <2>
