@@ -1,9 +1,9 @@
 node {
-    /*stage('Clean') { // <2>
+    stage('Clean') { // <2>
         sh 'rm -rf tmp' // <3>
     }
       
-    stage('Cloning') { // <2>
+    /*stage('Cloning') { // <2>
         sh 'pwd' // <3>
     }
  
