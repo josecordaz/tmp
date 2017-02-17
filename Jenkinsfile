@@ -12,7 +12,7 @@ node {
     }*/
     
     stage('Cloning') { // <2>
-        sh 'git clone git@github.com:josecordaz/tmp.git' // <3>
+        sh 'git clone git@github.com:jenkins/tmp.git' // <3>
     }
 
     stage('Downloading dependencies'){
