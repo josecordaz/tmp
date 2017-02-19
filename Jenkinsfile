@@ -41,12 +41,12 @@ node {
     
     wrap([$class: 'Xvfb']) {
         stage('Testing') {
-            sh 'cd && ng test --watch false'
+            sh 'cd tmp && ng test --watch false'
         }
     }
     
     stage('Publish') {
-        sh 'cd && ng github-pages:deploy'
+        sh 'cd tmp && ng github-pages:deploy'
     }
 }
 
