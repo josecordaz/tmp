@@ -16,37 +16,37 @@ node {
     }
 
     stage('Downloading dependencies'){
-        sh 'npm install'
+        sh 'cd && npm install'
     }
 
     stage('Checkout Master') { // <2>
-        sh 'git checkout main' // <3>
+        sh 'cd && git checkout main' // <3>
     }
     
     stage('Pull Master') { // <2>
-        sh 'git pull' // <3>
+        sh 'cd && git pull' // <3>
     }
     
     stage('Checkout master'){
-        sh 'git checkout master'
+        sh 'cd && git checkout master'
     }
     
     stage('Merge') {
-        sh 'git merge main'
+        sh 'cd && git merge main'
     }
     
     stage('Pusn to master') {
-        sh 'git push'
+        sh 'cd && git push'
     }
     
     wrap([$class: 'Xvfb']) {
         stage('Testing') {
-            sh ' ng test --watch false'
+            sh 'cd && ng test --watch false'
         }
     }
     
     stage('Publish') {
-        sh 'ng github-pages:deploy'
+        sh 'cd && ng github-pages:deploy'
     }
 }
 
