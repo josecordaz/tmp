@@ -41,7 +41,7 @@ node {
     
     wrap([$class: 'Xvfb']) {
         stage('Testing') {
-            sh 'cd && ng test --watch false'
+            sh 'cd && ng test --watch false '
         }
     }
     
