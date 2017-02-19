@@ -16,27 +16,27 @@ node {
     }
 
     stage('Downloading dependencies'){
-        sh 'cd && npm install'
+        sh 'cd tmp && npm install'
     }
 
     stage('Checkout Master') { // <2>
-        sh 'cd && git checkout main' // <3>
+        sh 'cd tmp && git checkout main' // <3>
     }
     
     stage('Pull Master') { // <2>
-        sh 'cd && git pull' // <3>
+        sh 'cd tmp && git pull' // <3>
     }
     
     stage('Checkout master'){
-        sh 'cd && git checkout master'
+        sh 'cd tmp && git checkout master'
     }
     
     stage('Merge') {
-        sh 'cd && git merge main'
+        sh 'cd tmp && git merge main'
     }
     
     stage('Pusn to master') {
-        sh 'cd && git push'
+        sh 'cd tmp && git push'
     }
     
     wrap([$class: 'Xvfb']) {
