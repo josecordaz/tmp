@@ -46,7 +46,7 @@ node {
     }
     
     stage('Publish') {
-        sh 'cd tmp && ng github-pages:deploy '
+        sh 'cd tmp && ng github-pages:deploy'
     }
 }
 
