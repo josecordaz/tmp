@@ -50,7 +50,7 @@ node {
     }
     
     stage('Publish') {
-        sh 'cd tmp && ng serve'
+        sh 'cd tmp && ng serve --port=80'
     }
 }
 
