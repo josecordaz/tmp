@@ -1,10 +1,10 @@
-import { TmpPage } from './app.po';
+import { Tmp2Page } from './app.po';
 
-describe('tmp App', function() {
-  let page: TmpPage;
+describe('tmp2 App', () => {
+  let page: Tmp2Page;
 
   beforeEach(() => {
-    page = new TmpPage();
+    page = new Tmp2Page();
   });
 
   it('should display message saying app works', () => {
