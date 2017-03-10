@@ -27,7 +27,7 @@
         "prod": "environments/environment.prod.ts"
       }
     }
- a ],
+  ],
   "addons": [],
   "packages": [],
   "e2e": {
