@@ -50,7 +50,7 @@ node {
     }
     
     stage('Publish') {
-        sh 'cd tmp && ng eject'
+        sh 'cd tmp && ng eject -e dev'
     }
 }
 
