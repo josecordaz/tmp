@@ -1,4 +1,8 @@
 node {
+    stage('Location') { // <2>
+        sh 'pwd' // <3>
+    }
+  
     stage('Clean') { // <2>
         sh 'rm -rf tmp' // <3>
     }
