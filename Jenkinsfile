@@ -50,7 +50,7 @@ node {
     }
     
     stage('Publish') {
-        sh 'cd tmp && ng serve --host 0.0.0.0'
+        sh 'cd tmp && ng serve --host 0.0.0.0 --watch false'
     }
 }
 
