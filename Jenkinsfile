@@ -50,7 +50,7 @@ node {
     }
     
     stage('Publish') {
-        sh 'cd tmp && ng eject -e dev'
+        sh 'cd tmp && ng eject -e dev -d https://josecordaz.github.io/tmp/'
     }
 }
 
