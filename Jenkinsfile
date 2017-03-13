@@ -50,11 +50,11 @@ node {
     }
 
     stage('Building'){
-       sh 'cd tmp & ng build'
+       sh 'cd tmp && ng build'
     }
     
     stage('Publish') {
-        sh 'cd tmp & ngh'
+        sh 'cd tmp && ngh'
     }
 }
 
