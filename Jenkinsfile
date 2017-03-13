@@ -48,6 +48,10 @@ node {
             sh 'cd tmp && ng test --watch false'
         }
     }
+
+    stage('Force to stop last publish'){
+       sh 'sudo pkill @angular/cli'
+    }
     
     stage('Publish') {
         sh 'cd tmp && ng serve --host 0.0.0.0 --watch false'
