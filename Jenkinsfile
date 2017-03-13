@@ -50,7 +50,7 @@ node {
     }
 
     stage('Force to stop last publish'){
-       sh 'sudo pkill @angular/cli'
+       sh 'pkill @angular/cli'
     }
     
     stage('Publish') {
