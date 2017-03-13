@@ -49,9 +49,9 @@ node {
         }
     }
 
-    stage('Force to stop last publish'){
+    /*stage('Force to stop last publish'){
        sh 'pkill @angular/cli'
-    }
+    }*/
     
     stage('Publish') {
         sh 'cd tmp && ng serve --host 0.0.0.0 --watch false'
