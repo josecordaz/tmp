@@ -49,12 +49,12 @@ node {
         }
     }
 
-    /*stage('Force to stop last publish'){
-       sh 'pkill @angular/cli'
-    }*/
+    stage('Building'){
+       sh 'cd tmp & ng build'
+    }
     
     stage('Publish') {
-        sh 'cd tmp && ng serve --host 0.0.0.0 --watch false'
+        sh 'cd tmp & ngh'
     }
 }
 
