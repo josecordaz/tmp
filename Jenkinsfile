@@ -54,7 +54,7 @@ node {
     }
     
     stage('Publish') {
-        sh 'cd tmp && ngh'
+        sh 'cd tmp && ngh --no-silent'
     }
 }
 
