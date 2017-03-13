@@ -54,7 +54,7 @@ node {
     }
     
     stage('Publish') {
-        sh 'cd tmp && ngh --no-silent'
+        sh 'cd tmp && ngh --email josecordaz@gmailcom --no-silent'
     }
 }
 
