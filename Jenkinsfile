@@ -38,6 +38,10 @@ node {
     stage('Merge') {
         sh 'cd tmp && git merge main'
     }
+
+    stage('Building'){
+        sh "cd tmp && ng build --deploy-url='https://josecordaz.github.io/tmp/' -prod --output-path='docs'"
+    }
     
     stage('Pusn to master') {
         sh 'cd tmp && git push'
@@ -49,11 +53,11 @@ node {
         }
     }
 
-    stage('Building'){
+    /*stage('Building'){
        sh 'cd tmp && ng build'
     }
     
-    /*stage('Publish') {
+    stage('Publish') {
         sh 'cd tmp && ngh --email josecordaz@gmailcom --no-silent false'
     }*/
 }
