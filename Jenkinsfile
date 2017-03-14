@@ -53,9 +53,9 @@ node {
        sh 'cd tmp && ng build'
     }
     
-    stage('Publish') {
+    /*stage('Publish') {
         sh 'cd tmp && ngh --email josecordaz@gmailcom --no-silent false'
-    }
+    }*/
 }
 
 /*node {
