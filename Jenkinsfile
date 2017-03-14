@@ -17,15 +17,15 @@ node {
         }
     }
 
-    stage('Checkout Master') {
+    stage('Checkout Main') {
         sh 'cd tmp && git checkout main'
     }
     
-    stage('Pull Master') {
+    stage('Pull Main') {
         sh 'cd tmp && git pull'
     }
     
-    stage('Checkout master'){
+    stage('Checkout Master'){
         sh 'cd tmp && git checkout master'
     }
     
@@ -37,8 +37,12 @@ node {
         sh "cd tmp && ng build --deploy-url='https://josecordaz.github.io/tmp/' -prod --output-path='docs'"
     }
     
+    stage('Adding build'){
+        sh "cd tmp && git add . && git commit -m 'build from Jenkins'"
+    }
+
     stage('Pusn to master') {
         sh 'cd tmp && git push'
     }
-    
+
 }
