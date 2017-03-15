@@ -1,5 +1,8 @@
 node {
+<<<<<<< HEAD
   
+=======
+>>>>>>> 116a88472558d890bf5bc41348d7db42c912aaa6
     stage('Clean') {
         sh 'rm -rf tmp'
     }
@@ -12,39 +15,46 @@ node {
         sh 'cd tmp && npm install'
     }
 
+<<<<<<< HEAD
     stage('Checkout Master') {
         sh 'cd tmp && git checkout main'
     }
     
     stage('Pull Master') {
+=======
+    wrap([$class: 'Xvfb']) {
+        stage('Testing') {
+            sh 'cd tmp && ng test --watch false'
+        }
+    }
+
+    stage('Checkout Main') {
+        sh 'cd tmp && git checkout main'
+    }
+    
+    stage('Pull Main') {
+>>>>>>> 116a88472558d890bf5bc41348d7db42c912aaa6
         sh 'cd tmp && git pull'
     }
     
-    stage('Checkout master'){
+    stage('Checkout Master'){
         sh 'cd tmp && git checkout master'
     }
     
     stage('Merge') {
         sh 'cd tmp && git merge main'
     }
+
+    stage('Building'){
+        sh "cd tmp && ng build --deploy-url='https://josecordaz.github.io/tmp/' -prod --output-path='docs'"
+    }
     
+    stage('Adding build'){
+        sh "cd tmp && git add . && git commit -m 'build from Jenkins'"
+    }
+
     stage('Pusn to master') {
         sh 'cd tmp && git push'
     }
-    
-    wrap([$class: 'Xvfb']) {
-        stage('Testing') {
-            sh 'cd tmp && ng test --watch false'
-        }
-    }
-    
-    stage('Publish') {
-        sh 'cd tmp && ng serve --host 0.0.0.0 --watch false'
-    }
-}
 
-/*node {
-  wrap([$class: 'Xvfb']) {
-    ... your steps here
-  }
-}*/
+}
