@@ -2,7 +2,7 @@ node {
     stage('Clean') {
         sh 'rm -rf tmp'
     }
-    
+    /*
     stage('Cloning') {
         sh 'git clone git@github.com:josecordaz/tmp.git'
     }
@@ -26,7 +26,6 @@ node {
     }
     
     stage('Pull Main') {
->>>>>>> 116a88472558d890bf5bc41348d7db42c912aaa6
         sh 'cd tmp && git pull'
     }
     
@@ -48,6 +47,6 @@ node {
 
     stage('Pusn to master') {
         sh 'cd tmp && git push'
-    }
+    }*/
 
 }
