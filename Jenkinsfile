@@ -1,8 +1,4 @@
 node {
-<<<<<<< HEAD
-  
-=======
->>>>>>> 116a88472558d890bf5bc41348d7db42c912aaa6
     stage('Clean') {
         sh 'rm -rf tmp'
     }
@@ -15,13 +11,10 @@ node {
         sh 'cd tmp && npm install'
     }
 
-<<<<<<< HEAD
     stage('Checkout Master') {
         sh 'cd tmp && git checkout main'
     }
     
-    stage('Pull Master') {
-=======
     wrap([$class: 'Xvfb']) {
         stage('Testing') {
             sh 'cd tmp && ng test --watch false'
